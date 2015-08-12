@@ -1,0 +1,22 @@
+af-nav-drawer,
+[af-nav-drawer] {
+    position: fixed;
+    background-color: white;
+    width: $navDrawerWidth;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1005;
+    transform: translate3d(-$navDrawerWidth, 0, 0);
+    transition: transform $transitionSpeed ease-in-out;
+    will-change: transform;
+
+    &.open {
+        transform: translate3d(0, 0, 0);
+    }
+
+    af-menu,
+    [af-menu] {
+        margin-top: $toolbarHeight;
+    }
+}

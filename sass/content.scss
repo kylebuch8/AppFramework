@@ -1,0 +1,19 @@
+[content] {
+    padding: 0 16px;
+}
+
+af-content,
+[af-content] {
+    position: fixed;
+    top: $toolbarHeight;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+
+    .content {
+        height: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}

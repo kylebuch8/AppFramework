@@ -1,0 +1,24 @@
+af-menu,
+[af-menu] {
+    display: block;
+
+    af-item,
+    [af-item] {
+        display: flex;
+        cursor: pointer;
+        transition: background-color 200ms ease-in-out;
+
+        &.active,
+        &:hover {
+            background-color: #efefef;
+        }
+
+        a {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+}

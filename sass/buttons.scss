@@ -1,0 +1,68 @@
+$width: 20px;
+
+button {
+    display: inline-block;
+    margin: 0 8px;
+    border: none;
+    background: none;
+    outline: none;
+
+    &.hamburger {
+        padding: 8px;
+        cursor: pointer;
+
+        .lines {
+            display: inline-block;
+            width: $width;
+            height: 2px;
+            background: white;
+            position: relative;
+            transition: .2s;
+            top: -4px;
+            border-radius: 2px;
+
+            &:before,
+            &:after {
+                display: inline-block;
+                width: $width;
+                height: 2px;
+                background: white;
+                position: absolute;
+                left: 0;
+                content: '';
+                transition: .2s;
+                border-radius: 2px;
+            }
+
+            &:before {
+                top: 5px;
+            }
+
+            &:after {
+                top: -5px;
+            }
+        }
+
+        &.open {
+            .lines {
+                transform: rotate(180deg);
+
+                &:before,
+                &:after {
+                    width: $width / 1.4;
+                    left: 7px;
+                }
+
+                &:before {
+                    top: 5px;
+                    transform: rotate(-45deg);
+                }
+
+                &:after {
+                    top: -5px;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+af-toolbar,
+[af-toolbar] {
+    position: fixed;
+    z-index: 1004;
+    background-color: $toolbarBackgroundColor;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $toolbarHeight;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-family: 'Helvetica Neue', Roboto, 'Segoe UI', sans-serif;
+    padding: 0 16px;
+}
