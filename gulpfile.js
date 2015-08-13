@@ -50,16 +50,14 @@ gulp.task('getModules', function (cb) {
 
 gulp.task('minify', function () {
     gulp.src(['./src/**/*.js', '!./src/**/*_spec.js'])
-        .pipe(gulp.dest('./dist/src'))
-        .pipe(sourcemaps.init())
-        .pipe(concat('app-framework.concat.js'))
+        .pipe(concat('app-framework.js'))
         .pipe(concat.header('angular.module(\'app-framework\', [\'' + modules + '\']);\n'))
         .pipe(iife())
-        .pipe(rename('app-framework.js'))
         .pipe(gulp.dest('./dist'))
+        .pipe(sourcemaps.init())
         .pipe(uglify())
         .pipe(rename('app-framework.min.js'))
-        .pipe(sourcemaps.write('./', { sourceRoot: 'src'}))
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist'));
 });
 
