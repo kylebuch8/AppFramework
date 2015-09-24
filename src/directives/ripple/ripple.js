@@ -99,10 +99,10 @@ function afRipple($window) {
          */
         function rippleAnimation(event, timing) {
             var tl           = new TimelineMax(),
-                w            = event.target.offsetWidth,
-                h            = event.target.offsetHeight,
-                x            = (!attrs.afRippleCenter) ? event.offsetX : w / 2,
-                y            = (!attrs.afRippleCenter) ? event.offsetY : h / 2,
+                w            = event.currentTarget.offsetWidth,
+                h            = event.currentTarget.offsetHeight,
+                x            = (!attrs.afRippleCenter) ? event.layerX : w / 2,
+                y            = (!attrs.afRippleCenter) ? event.layerY : h / 2,
                 offsetX      = Math.abs( (w / 2) - x ),
                 offsetY      = Math.abs( (h / 2) - y ),
                 deltaX       = (w / 2) + offsetX,
