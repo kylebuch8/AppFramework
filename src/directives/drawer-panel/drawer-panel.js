@@ -30,9 +30,14 @@ function afDrawerPanel($afComponentRegistry) {
                   '</button>' +
                   '<ng-transclude></ng-transclude>' +
                   '<af-scrim ng-class="{ \'show\': open }" ng-click="vm.toggleDrawer()"></af-scrim>',
+        link: link,
         controller: DrawerPanelController,
         controllerAs: 'vm'
     };
+
+    function link(scope, element, attrs, drawerPanelController) {
+        element.on('$destroy', drawerPanelController.destroy);
+    }
 
     return directive;
 }
